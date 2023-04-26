@@ -56,7 +56,7 @@ requirements:
 # Rerender
 #    - grpcio-tools >=1.40.0  # Causes run time issues with Python 37
     - cached-property >=1.5.0
-    - avro-python3 >=1.10.2,,<2.0
+    - avro-python3 >=1.10.2,<2.0
     - chardet >=4.0.0
 #    - pandas >=1.3.5
 
