@@ -14,7 +14,7 @@ build:
 #    - metadata = metadata.cmd:metadata
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
