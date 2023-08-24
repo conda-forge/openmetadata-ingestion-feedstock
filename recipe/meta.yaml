@@ -65,8 +65,8 @@ test:
     - airflow_provider_openmetadata
     - metadata
   commands:
-    #- pip check # openmetadata-ingestion 1.1.1.1 requires avro, which is not installed.
-    - metadata --help
+    - pip check # openmetadata-ingestion 1.1.1.1 requires avro, which is not installed.
+    #- metadata --help # ModuleNotFoundError: No module named 'avro.errors'
   requires:
     - pip
 
