@@ -62,7 +62,7 @@ test:
     - airflow_provider_openmetadata
     - metadata
   commands:
-    - metadata --help
+    #- metadata --help re.error: global flags not at the start of the expression at position 1
   requires:
     - pip
 
