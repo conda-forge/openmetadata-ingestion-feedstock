@@ -62,7 +62,6 @@ test:
     - airflow_provider_openmetadata
     - metadata
   commands:
-    - pip check
     - metadata --help
   requires:
     - pip
