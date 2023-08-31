@@ -48,10 +48,10 @@ requirements:
     - python-jose >=3.3,<4.0
     - pyyaml
     - requests >=2.23
-    - requests-aws4auth >=1.1,<2.0
+    - requests-aws4auth >=1.1
     - setuptools >=66.0.0
     - sqlalchemy >=1.4.0,<2
-    - tabulate ==0.9.0
+    - tabulate >=0.9.0
     - typing-compat >=0.1.0
     - typing-extensions
     - typing_inspect
