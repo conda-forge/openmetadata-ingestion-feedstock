@@ -14,12 +14,13 @@ build:
     - metadata = metadata.cmd:metadata
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python >=3.8
     - pip
+    - setuptools
   run:
     - python >=3.8
     - antlr4-python3-runtime >=4.9.2
