@@ -1,0 +1,92 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  name: openmetadata-ingestion
+  version: "1.8.1.0"
+  python_min: '3.9'
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/openmetadata_ingestion-${{ version }}.tar.gz
+  sha256: b54844377f552724fc890e5b2fb045fc91fec1c5d93fb814f165ef9c4de44e1a
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - metadata = metadata.cmd:metadata
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=70.3.0,<70.4.0
+    - pip
+  run:
+    - python >=${{ python_min }},<4.0
+    - email-validator >=2.0
+    - packaging
+    - google-cloud-secret-manager ==2.22.1  # Needs Equal
+    - mysql-connector-python >=9.1
+    - jaraco.functools <4.2.0
+    - azure-identity >=1.12,<2.0
+    - python-dotenv >=0.19.0
+    - pyyaml >=6.0,<7.0
+    - collate-data-diff
+    - importlib-metadata >=4.13.0
+    - collate-sqllineage >=1.6.0,<1.7.0
+    - collate-sqlfluff  # Needed for collate-sqllineage
+    - sqlalchemy >=1.4.0,<2
+    - cached-property ==1.5.2  # Needs Equal
+    - pymysql >=1.0,<2.0
+    - boto3 >=1.20,<2.0
+    - memory_profiler
+    - python-dateutil >=2.8.1
+    - snowflake-connector-python >=3.13.1,<4.0.0
+    - tabulate ==0.9.0  # Needs Equal
+    - jsonpatch >=1.24,<2.0
+    - requests >=2.23
+    - requests-aws4auth >=1.1,<2.0
+    - antlr4-python3-runtime ==4.9.2  # Needs Equal
+    - mypy_extensions >=0.4.3
+    - azure-keyvault-secrets
+    - pydantic >=2.7.0,<3.0
+    - chardet ==4.0.0  # Needs Equal
+    - cryptography >=42.0.0
+    - setuptools >=70.0,<71.0
+    - shapely
+    - typing_inspect
+    - google-crc32c
+    - jinja2 >=2.11.3
+    - pydantic-settings >=2.7.0,<3.0
+
+tests:
+  - python:
+      imports:
+        - airflow_provider_openmetadata
+        - metadata
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - metadata --help #re.error: global flags not at the start of the expression at position 1
+      - pip check
+
+about:
+  homepage: https://open-metadata.org/
+  summary: Ingestion Framework for OpenMetadata
+  license: Apache-2.0
+  license_file: LICENSE
+  repository: https://github.com/open-metadata/OpenMetadata
+
+extra:
+  recipe-maintainers:
+    - rxm7706
