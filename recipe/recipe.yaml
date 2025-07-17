@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: openmetadata-ingestion
-  version: "1.8.3.0"
+  version: "1.8.5.0"
   python_min: '3.9'
 
 package:
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/openmetadata_ingestion-${{ version }}.tar.gz
-  sha256: 4d64f2aaeebe23e1c0e9fc708942b76ebe5550ccc1e119b4466f377541ff02cd
+  sha256: 4fad291455fde4555c7d83def07206d7ab1157629ea201c40d0406a0389feebb
 
 build:
   number: 0
