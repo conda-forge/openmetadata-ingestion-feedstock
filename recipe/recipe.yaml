@@ -56,7 +56,7 @@ requirements:
     - setuptools >=70.0,<71.0
     - mysql-connector-python >=9.1
     - snowflake-connector-python >=3.13.1,<4.0.0
-    - pydantic >=2.7.0,<3.0
+    - pydantic >=2.7.0,<2.12
     - collate-data-diff >=0.11.6
     - sqlalchemy >=1.4.0,<2
     - requests >=2.23
