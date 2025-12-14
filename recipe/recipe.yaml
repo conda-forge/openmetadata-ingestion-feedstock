@@ -39,7 +39,8 @@ requirements:
     - cryptography >=42.0.0
     - python-dateutil >=2.8.1
     - shapely
-    - typing-inspect
+    # typing_inspect is the conda-forge package name for typing-inspect pypi package
+    - typing_inspect
     - google-crc32c
     - sqlalchemy >=1.4.0,<2
     - jsonpatch <2.0,>=1.24
