@@ -45,7 +45,8 @@ requirements:
     - sqlalchemy >=1.4.0,<2
     - jsonpatch <2.0,>=1.24
     - requests-aws4auth >=1.1,<2.0
-    - mypy-extensions >=0.4.3
+    # mypy_extensions is the conda-forge package name for mypy-extensions pypi package
+    - mypy_extensions >=0.4.3
     - pydantic >=2.0,<3.0,>=2.7.0,<2.12
     - importlib-metadata >=4.13.0
     - mysql-connector-python >=9.1
