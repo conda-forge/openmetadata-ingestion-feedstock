@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: openmetadata-ingestion
-  version: "1.11.6.1"
+  version: 1.11.8.0
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/openmetadata_ingestion-${{ version }}.tar.gz
-  sha256: cd3e8caf084c95cd0fb08800491cb202fde864483f40e0e528815acbfc77d04a
+  sha256: 59e2a4803a1051d4943e8fb446e3cb2aa0d68d45cc1ef1307281ef7a0ee9414e
 
 build:
   number: 0
@@ -30,48 +30,40 @@ requirements:
     - python >=${{ python_min }},<4.0
     - mysql-connector-python >=9.1
     - packaging
-    # typing_inspect is the conda-forge package name for typing-inspect pypi package
     - typing_inspect
     - cryptography >=42.0.0
     - requests >=2.23
-    - chardet ==4.0.0  # Needs Equal
+    - chardet ==4.0.0
     - shapely
-    - antlr4-python3-runtime ==4.9.2  # Needs Equal
+    - antlr4-python3-runtime ==4.9.2
     - python-dotenv >=0.19.0
-    - cached-property ==1.5.2  # Needs Equal
+    - cached-property ==1.5.2
     - snowflake-connector-python >=3.13.1,<4.0.0
     - sqlalchemy >=1.4.0,<2
-    - pydantic-settings >=2.0,<3.0,>=2.7.0
-    # mypy_extensions is the conda-forge package name for mypy-extensions pypi package
+    - pydantic-settings >=2.0,<3.dev0,>=2.7.0
     - mypy_extensions >=0.4.3
-    - httpx >=0.28.0,<0.29.0
+    - httpx >=0.28.0,<0.29.dev0
     - email-validator >=2.0
-    - setuptools >=78.1.1,<78.2.0
+    - setuptools >=78.1.1,<78.2.dev0
     - boto3 >=1.20,<2.0
-    - google-cloud-secret-manager ==2.24.0  # Needs Equal
-    # memory_profiler is the conda-forge package name for memory-profiler pypi package
+    - google-cloud-secret-manager ==2.24.0
     - memory_profiler
     - jsonpatch <2.0,>=1.24
     - jinja2 >=2.11.3
-    - azure-identity >=1.12,<2.0
+    - azure-identity >=1.12,<2.dev0
     - importlib-metadata >=4.13.0
     - google-crc32c
-    - pydantic >=2.0,<3.0,>=2.7.0,<2.12
-    - requests-aws4auth >=1.1,<2.0
+    - pydantic >=2.0,<3.dev0,>=2.7.0,<2.12
+    - requests-aws4auth >=1.1,<2.dev0
     - jaraco.functools <4.2.0
-    - collate-sqllineage >=2.0,<3.0
-    # Manual Add of collate-sqlfluff
-    - collate-sqlfluff  # Needed for collate-sqllineage
-    - pyyaml >=6.0,<7.0
+    - collate-sqllineage >=2.0,<3.dev0
+    - pyyaml >=6.0,<7.dev0
     - python-kubernetes >=21.0.0
     - python-dateutil >=2.8.1
-    - collate-data-diff >=0.11.6
-    - tabulate ==0.9.0  # Needs Equal
-    - pymysql >=1.0,<2.0
+    - collate-data-diff >=0.11.9
+    - tabulate ==0.9.0
+    - pymysql >=1.0,<2.dev0
     - azure-keyvault-secrets
-    # Manual Add of cachetools
-    - cachetools
-
 tests:
   - python:
       imports:
